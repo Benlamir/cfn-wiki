@@ -8,3 +8,7 @@ aws cloudformation deploy   --template-file infra/vpc.yaml   --stack-name starte
 
 ## Delete a stack
 aws cloudformation delete-stack   --stack-name starter-vpc   --profile cf
+
+## Describe Route Tables
+aws ec2 describe-route-tables --filters Name=vpc-id,Values=$VPC_ID --profile cf
+# Why: verify public/private route tables in a VPC
